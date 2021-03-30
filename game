@@ -1,0 +1,58 @@
+def coin_game():
+    import random
+    state = 0   
+    
+    while state == 0:
+        heads_times = 0
+        tails_times = 0
+        answer = ''
+        choice = "heads", "tails"
+        
+        
+        while answer not in choice:
+            answer = input("Heads or Tails? ")
+            
+    
+            if answer.lower() not in choice:
+                print("Sorry, try again. Heads or Tails?")
+        
+        
+        z = int(input("how many times do you want to play? "))
+        
+        for x in range(0, z):
+            x = random.randrange(0,10)
+    
+            if x < 5:
+                heads_times = heads_times + 1
+            else: 
+                tails_times = tails_times + 1
+    
+        print(f'Heads won {heads_times} times')
+        print(f'Tails won {tails_times} times')
+
+        if answer.lower() == 'heads' and heads_times > tails_times:
+            print("YOU WIN")
+        elif answer.lower() == 'tails' and tails_times > heads_times:
+            print("YOU WIN")
+        elif tails_times == heads_times:
+            print('DRAW! YOU GOT LUCKY, KID')
+        else:
+            print("YOU LOSE, SUCKER")
+    
+        again = ''
+        response = 'yes', 'no'
+        
+        while again not in response:
+            again = input('Do you want to play again: ')
+            
+            if again.lower() == 'no':
+                print("Thanks for playing Bud!")
+                state = state + 1
+            elif again.lower() not in response:
+                print("Try again, do you want to play again, yes or no?")
+            elif again.lower() == 'yes':
+                pass
+        
+
+
+
